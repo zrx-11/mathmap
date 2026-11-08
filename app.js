@@ -297,21 +297,61 @@ function loop(now){
   renderer3D.render(scene,camera);
 }
 
-/* 标签距离 LOD：近处清晰、远处淡出，避免 154 个标签在全图视角糊成一团 */
+/* 标签 LOD：全图视角只保留重点路径/悬停/选中节点，其余按距离显示；每 5 帧做一次屏幕避让，防止标签互相压盖 */
+const _lv=new THREE.Vector3();
+let _declutterTick=0;
+function _labelRect(m, sp, f){
+  _lv.copy(m.position).project(camera);
+  const sx=(_lv.x*0.5+0.5)*chartEl.clientWidth;
+  const sy=(-_lv.y*0.5+0.5)*chartEl.clientHeight;
+  const d=Math.max(camera.position.distanceTo(m.position),1);
+  const k=chartEl.clientHeight/(2*Math.tan(camera.fov*Math.PI/360));
+  const w=Math.max((sp.userData.baseX*f/d)*k, 18);
+  const h=Math.max((SPRITE_H*f/d)*k, 11);
+  return [sx,sy,w,h];
+}
 function tickLabels(){
   if(!camera||!meshList.length) return;
   const cam=camera.position;
+  const declutter=(_declutterTick++%5===0);
+  const taken=[];
+  const shown=[];
+  // 第一轮：热点标签（鼠标悬停 / 高亮链 / 选中）优先占位
   for(let i=0;i<meshList.length;i++){
     const m=meshList[i], sp=m.userData.sprite;
-    if(!sp||!sp.visible) continue;
-    const base=sp.userData.op!==undefined?sp.userData.op:1;
-    if(sp.userData.pinned){ sp.material.opacity=base; continue; }
+    if(!sp||!m.visible) { if(sp) sp.visible=false; continue; }
+    const hot=sp.userData.pinned || m.userData.id===hoverId;
+    if(!hot) continue;
     const d=cam.distanceTo(m.position);
-    let k;
-    if(d<45) k=1;
-    else if(d<150) k=1-(d-45)/105*0.8;
-    else k=0.2;
-    sp.material.opacity=base*k;
+    sp.visible=true;
+    sp.material.opacity=sp.userData.op!==undefined?sp.userData.op:1;
+    sp.scale.set(sp.userData.baseX, SPRITE_H, 1);
+    if(declutter) taken.push(_labelRect(m,sp,1));
+  }
+  // 第二轮：其余标签按距离 + 避让决定是否显示
+  for(let i=0;i<meshList.length;i++){
+    const m=meshList[i], sp=m.userData.sprite;
+    if(!sp||!m.visible) continue;
+    if(sp.userData.pinned || m.userData.id===hoverId) continue;
+    const base=sp.userData.op!==undefined?sp.userData.op:1;
+    const d=cam.distanceTo(m.position);
+    const show = sp.userData.important ? d<115 : d<45;
+    if(!show){ sp.visible=false; continue; }
+    const f = d<=55?1:Math.max(0.55,55/d*1.1);
+    if(declutter){
+      const r=_labelRect(m,sp,f);
+      let free=true;
+      for(let t=0;t<taken.length;t++){
+        const t2=taken[t];
+        if(Math.abs(r[0]-t2[0])<(r[2]+t2[2])*0.58 && Math.abs(r[1]-t2[1])<(r[3]+t2[3])*0.62){ free=false; break; }
+      }
+      sp.userData.hide=!free;
+      if(free) taken.push(r);
+    }
+    if(sp.userData.hide){ sp.visible=false; continue; }
+    sp.visible=true;
+    sp.material.opacity=base*(d<115?1:0.6);
+    sp.scale.set(sp.userData.baseX*f, SPRITE_H*f, 1);
   }
 }
 
@@ -400,6 +440,7 @@ function rebuild3D(ids, highlight, focusOnly){
     scene.add(m); meshes.set(id,m); meshList.push(m);
     const sp=makeLabelSprite(n, dim);
     if(hl) sp.userData.pinned=true;
+    sp.userData.important = (n.b==='ai'||n.b==='finance');
     if(focusOnly && !hl) sp.visible=false;
     sp.position.set(0.95,0.28,0);
     m.add(sp);
