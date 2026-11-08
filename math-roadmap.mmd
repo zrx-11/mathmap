@@ -1,0 +1,595 @@
+flowchart TD
+  %% 数学学习全景图 · 无说明路线版（154 节点 / 256 边 / 15 大类 / L0-L6）
+  classDef cat0 fill:#230C0C,stroke:#FF5B5B,stroke-width:1.2px,color:#FF5B5B
+  classDef cat1 fill:#231608,stroke:#FF9E3D,stroke-width:1.2px,color:#FF9E3D
+  classDef cat2 fill:#221C0A,stroke:#F7C948,stroke-width:1.2px,color:#F7C948
+  classDef cat3 fill:#171D08,stroke:#A8D640,stroke-width:1.2px,color:#A8D640
+  classDef cat4 fill:#071D15,stroke:#34D399,stroke-width:1.2px,color:#34D399
+  classDef cat5 fill:#061D1A,stroke:#2DD4BF,stroke-width:1.2px,color:#2DD4BF
+  classDef cat6 fill:#071A22,stroke:#38BDF8,stroke-width:1.2px,color:#38BDF8
+  classDef cat7 fill:#0D1723,stroke:#60A5FA,stroke-width:1.2px,color:#60A5FA
+  classDef cat8 fill:#121322,stroke:#818CF8,stroke-width:1.2px,color:#818CF8
+  classDef cat9 fill:#1A1223,stroke:#C084FC,stroke-width:1.2px,color:#C084FC
+  classDef cat10 fill:#201022,stroke:#E879F9,stroke-width:1.2px,color:#E879F9
+  classDef cat11 fill:#230F12,stroke:#FB7185,stroke-width:1.2px,color:#FB7185
+  classDef cat12 fill:#041D21,stroke:#22D3EE,stroke-width:1.2px,color:#22D3EE
+  classDef cat13 fill:#220F19,stroke:#F472B6,stroke-width:1.2px,color:#F472B6
+  classDef cat14 fill:#231A05,stroke:#FBBF24,stroke-width:1.2px,color:#FBBF24
+  subgraph L0["L0 数与运算 · 6 节点"]
+    num-natural["自然数与四则运算"]
+    fraction-decimal["分数与小数"]
+    ratio-percent["百分数与比例"]
+    neg-number["负数与数轴"]
+    power-root["幂与根式"]
+    geometry-intro["几何图形认知"]
+  end
+  class num-natural cat0;
+  class fraction-decimal cat0;
+  class ratio-percent cat0;
+  class neg-number cat0;
+  class power-root cat0;
+  class geometry-intro cat0;
+  subgraph L1["L1 初等数学 · 12 节点"]
+    algebra-basic["代数式与整式"]
+    linear-eq["一元一次方程"]
+    linear-system["二元一次方程组"]
+    quadratic-eq["一元二次方程"]
+    inequality["不等式与不等式组"]
+    factorization["因式分解"]
+    rational-expression["分式与有理式"]
+    plane-geometry["平面几何基础"]
+    congruent-similar["全等与相似"]
+    circle-geo["圆与圆幂定理"]
+    number-line-coord["平面直角坐标系"]
+    linear-func["一次函数与图像"]
+  end
+  class algebra-basic cat1;
+  class linear-eq cat1;
+  class linear-system cat1;
+  class quadratic-eq cat1;
+  class inequality cat1;
+  class factorization cat1;
+  class rational-expression cat1;
+  class plane-geometry cat2;
+  class congruent-similar cat2;
+  class circle-geo cat2;
+  class number-line-coord cat2;
+  class linear-func cat2;
+  subgraph L2["L2 高中阶段 · 16 节点"]
+    trig-basic["三角函数初步"]
+    trig-identity["三角恒等变换"]
+    solve-triangle["解三角形"]
+    vector-basic["平面向量"]
+    analytic-geo["解析几何"]
+    quadratic-func["二次函数"]
+    set-map["集合与映射"]
+    func-concept["函数概念与性质"]
+    exponent-log["指数与对数函数"]
+    func-analysis["函数综合与图像变换"]
+    sequence["数列与等差等比"]
+    induction["数学归纳法"]
+    permute-combine["排列组合与二项式"]
+    prob-basic["概率初步"]
+    stat-basic["统计初步"]
+    logic-proposition["命题与谓词逻辑"]
+  end
+  class trig-basic cat2;
+  class trig-identity cat2;
+  class solve-triangle cat2;
+  class vector-basic cat2;
+  class analytic-geo cat2;
+  class quadratic-func cat3;
+  class set-map cat3;
+  class func-concept cat3;
+  class exponent-log cat3;
+  class func-analysis cat3;
+  class sequence cat3;
+  class induction cat3;
+  class permute-combine cat3;
+  class prob-basic cat9;
+  class stat-basic cat9;
+  class logic-proposition cat10;
+  subgraph L3["L3 大学基础 · 28 节点"]
+    limit-basic["极限初步"]
+    limit-epsilon["ε-δ语言与极限理论"]
+    continuity["连续函数与介值定理"]
+    derivative-basic["导数与微分"]
+    mean-value["微分中值定理"]
+    lhopital["洛必达法则"]
+    taylor["泰勒公式"]
+    func-extreme["函数极值与最值"]
+    integral-basic["不定积分"]
+    definite-integral["定积分与微积分基本定理"]
+    improper-integral["反常积分"]
+    series-basic["数项级数"]
+    power-series["幂级数"]
+    linear-algebra["线性方程组与矩阵"]
+    determinant["行列式"]
+    matrix-rank["矩阵的秩与线性相关"]
+    vector-space["向量空间"]
+    linear-map["线性变换"]
+    eigen["特征值与特征向量"]
+    multivariable-calc["多元微积分"]
+    gradient-vector["梯度与场论"]
+    prob-axiom["概率公理化"]
+    random-var["随机变量与分布"]
+    common-dist["常见分布族"]
+    expectation["期望与方差"]
+    data-viz["数据可视化与探索"]
+    proof-methods["证明方法"]
+    graphtheory-basic["图论基础"]
+  end
+  class limit-basic cat4;
+  class limit-epsilon cat4;
+  class continuity cat4;
+  class derivative-basic cat4;
+  class mean-value cat4;
+  class lhopital cat4;
+  class taylor cat4;
+  class func-extreme cat4;
+  class integral-basic cat4;
+  class definite-integral cat4;
+  class improper-integral cat4;
+  class series-basic cat4;
+  class power-series cat4;
+  class linear-algebra cat5;
+  class determinant cat5;
+  class matrix-rank cat5;
+  class vector-space cat5;
+  class linear-map cat5;
+  class eigen cat5;
+  class multivariable-calc cat8;
+  class gradient-vector cat8;
+  class prob-axiom cat9;
+  class random-var cat9;
+  class common-dist cat9;
+  class expectation cat9;
+  class data-viz cat9;
+  class proof-methods cat10;
+  class graphtheory-basic cat10;
+  subgraph L4["L4 大学中级 · 26 节点"]
+    quadratic-form["二次型与正定"]
+    inner-product["内积空间与正交"]
+    svd["奇异值分解"]
+    number-theory-basic["初等数论"]
+    modular-crypto["同余与RSA"]
+    real-analysis["实分析与测度论"]
+    complex-analysis["复变函数"]
+    residue["留数定理"]
+    multiple-integral["重积分与曲线曲面积分"]
+    stokes["格林高斯斯托克斯定理"]
+    ode-basic["常微分方程"]
+    topology-basic["点集拓扑"]
+    law-large-num["大数定律"]
+    clt["中心极限定理"]
+    joint-dist["随机向量与条件分布"]
+    markov-chain["马尔可夫链"]
+    statistics-infer["统计推断"]
+    graphalgo["图算法"]
+    combin-counting["组合计数"]
+    generating-func["生成函数"]
+    automata["自动机与形式语言"]
+    optimization-basic["优化问题建模"]
+    convex-basic["凸集与凸函数"]
+    linear-program["线性规划"]
+    fourier-series["傅里叶级数"]
+    time-value["货币时间价值"]
+  end
+  class quadratic-form cat5;
+  class inner-product cat5;
+  class svd cat5;
+  class number-theory-basic cat6;
+  class modular-crypto cat6;
+  class real-analysis cat7;
+  class complex-analysis cat7;
+  class residue cat7;
+  class multiple-integral cat8;
+  class stokes cat8;
+  class ode-basic cat8;
+  class topology-basic cat8;
+  class law-large-num cat9;
+  class clt cat9;
+  class joint-dist cat9;
+  class markov-chain cat9;
+  class statistics-infer cat9;
+  class graphalgo cat10;
+  class combin-counting cat10;
+  class generating-func cat10;
+  class automata cat10;
+  class optimization-basic cat11;
+  class convex-basic cat11;
+  class linear-program cat11;
+  class fourier-series cat12;
+  class time-value cat14;
+  subgraph L5["L5 大学高级 · 41 节点"]
+    group-theory["群论"]
+    ring-field["环与域"]
+    galois["伽罗瓦理论初步"]
+    lp-space["Lp空间与收敛"]
+    conformal-mapping["共形映射"]
+    banach-space["巴拿赫空间与算子"]
+    hilbert-space["希尔伯特空间"]
+    functional-analysis["泛函分析"]
+    spectrum["谱理论初步"]
+    ode-system["微分方程组与稳定性"]
+    pde-basic["偏微分方程"]
+    pde-solve["偏微分方程解法"]
+    differential-geometry["微分几何"]
+    algebraic-topology["代数拓扑"]
+    mcmc["马尔可夫链蒙特卡洛"]
+    brownian-motion["布朗运动"]
+    bayesian-stat["贝叶斯统计"]
+    computability["可计算性"]
+    complexity["计算复杂度"]
+    duality["对偶理论"]
+    kkt["KKT条件"]
+    convex-opt["凸优化算法"]
+    gradient-descent["梯度下降与变体"]
+    sgd["随机梯度下降与在线学习"]
+    fourier-transform["傅里叶变换"]
+    fft["快速傅里叶变换"]
+    info-theory["信息论"]
+    numerical-methods["数值方法"]
+    monte-carlo["蒙特卡洛方法"]
+    dynamical-systems["动力系统"]
+    ml-basics["机器学习基础"]
+    loss-func["损失函数与正则化"]
+    backprop["反向传播与自动微分"]
+    deep-learning["深度学习基础"]
+    prob-graph["概率图模型"]
+    kernel-methods["核方法"]
+    pca-embedding["降维与表示学习"]
+    portfolio-theory["投资组合理论"]
+    capm["CAPM与因子模型"]
+    risk-metrics["风险度量"]
+    time-series["时间序列分析"]
+  end
+  class group-theory cat6;
+  class ring-field cat6;
+  class galois cat6;
+  class lp-space cat7;
+  class conformal-mapping cat7;
+  class banach-space cat7;
+  class hilbert-space cat7;
+  class functional-analysis cat7;
+  class spectrum cat7;
+  class ode-system cat8;
+  class pde-basic cat8;
+  class pde-solve cat8;
+  class differential-geometry cat8;
+  class algebraic-topology cat8;
+  class mcmc cat9;
+  class brownian-motion cat9;
+  class bayesian-stat cat9;
+  class computability cat10;
+  class complexity cat10;
+  class duality cat11;
+  class kkt cat11;
+  class convex-opt cat11;
+  class gradient-descent cat11;
+  class sgd cat11;
+  class fourier-transform cat12;
+  class fft cat12;
+  class info-theory cat12;
+  class numerical-methods cat12;
+  class monte-carlo cat12;
+  class dynamical-systems cat12;
+  class ml-basics cat13;
+  class loss-func cat13;
+  class backprop cat13;
+  class deep-learning cat13;
+  class prob-graph cat13;
+  class kernel-methods cat13;
+  class pca-embedding cat13;
+  class portfolio-theory cat14;
+  class capm cat14;
+  class risk-metrics cat14;
+  class time-series cat14;
+  subgraph L6["L6 前沿研究 · 25 节点"]
+    analytic-number-theory["解析数论与ζ函数"]
+    riemann-geometry["黎曼几何与张量"]
+    stochastic-calc["随机积分与伊藤"]
+    martingale["鞅论"]
+    control-theory["控制论基础"]
+    variational-calc["变分法"]
+    representation-learning["表征学习"]
+    transformer["Transformer与注意力"]
+    llm-arch["大模型架构"]
+    llm-training["大模型训练"]
+    alignment["对齐与RLHF"]
+    diffusion["扩散模型与生成式AI"]
+    llm-inference["大模型推理优化"]
+    crypto-app["密码学与数学安全"]
+    geometric-deep-learning["几何深度学习"]
+    self-supervised["自监督学习"]
+    rl-basics["强化学习基础"]
+    black-scholes["期权定价与Black-Scholes"]
+    garch["波动率模型"]
+    factor-investing["因子投资"]
+    market-micro["市场微结构与高频"]
+    stat-arb["统计套利"]
+    ml-quant["机器学习量化"]
+    rl-trading["强化学习交易"]
+    mc-pricing["蒙特卡洛定价"]
+  end
+  class analytic-number-theory cat6;
+  class riemann-geometry cat8;
+  class stochastic-calc cat9;
+  class martingale cat9;
+  class control-theory cat12;
+  class variational-calc cat12;
+  class representation-learning cat13;
+  class transformer cat13;
+  class llm-arch cat13;
+  class llm-training cat13;
+  class alignment cat13;
+  class diffusion cat13;
+  class llm-inference cat13;
+  class crypto-app cat13;
+  class geometric-deep-learning cat13;
+  class self-supervised cat13;
+  class rl-basics cat13;
+  class black-scholes cat14;
+  class garch cat14;
+  class factor-investing cat14;
+  class market-micro cat14;
+  class stat-arb cat14;
+  class ml-quant cat14;
+  class rl-trading cat14;
+  class mc-pricing cat14;
+  num-natural --> fraction-decimal
+  fraction-decimal --> ratio-percent
+  num-natural --> neg-number
+  num-natural --> power-root
+  num-natural --> geometry-intro
+  num-natural --> algebra-basic
+  fraction-decimal --> algebra-basic
+  algebra-basic --> linear-eq
+  linear-eq --> linear-system
+  linear-eq --> quadratic-eq
+  linear-eq --> inequality
+  algebra-basic --> factorization
+  quadratic-eq --> factorization
+  factorization --> rational-expression
+  fraction-decimal --> rational-expression
+  geometry-intro --> plane-geometry
+  plane-geometry --> congruent-similar
+  congruent-similar --> circle-geo
+  neg-number --> number-line-coord
+  number-line-coord --> linear-func
+  algebra-basic --> linear-func
+  quadratic-eq --> quadratic-func
+  linear-func --> quadratic-func
+  congruent-similar --> trig-basic
+  circle-geo --> trig-basic
+  trig-basic --> trig-identity
+  trig-identity --> solve-triangle
+  number-line-coord --> vector-basic
+  trig-basic --> vector-basic
+  vector-basic --> analytic-geo
+  linear-func --> analytic-geo
+  circle-geo --> analytic-geo
+  algebra-basic --> set-map
+  set-map --> func-concept
+  linear-func --> func-concept
+  power-root --> exponent-log
+  func-concept --> exponent-log
+  quadratic-func --> func-analysis
+  exponent-log --> func-analysis
+  func-concept --> sequence
+  sequence --> induction
+  set-map --> permute-combine
+  sequence --> permute-combine
+  permute-combine --> prob-basic
+  prob-basic --> stat-basic
+  exponent-log --> limit-basic
+  rational-expression --> limit-basic
+  limit-basic --> limit-epsilon
+  limit-epsilon --> continuity
+  continuity --> derivative-basic
+  quadratic-func --> derivative-basic
+  derivative-basic --> mean-value
+  mean-value --> lhopital
+  mean-value --> taylor
+  series-basic --> taylor
+  derivative-basic --> func-extreme
+  derivative-basic --> integral-basic
+  integral-basic --> definite-integral
+  definite-integral --> improper-integral
+  sequence --> series-basic
+  definite-integral --> series-basic
+  series-basic --> power-series
+  taylor --> power-series
+  linear-system --> linear-algebra
+  vector-basic --> linear-algebra
+  linear-algebra --> determinant
+  determinant --> matrix-rank
+  linear-algebra --> matrix-rank
+  matrix-rank --> vector-space
+  vector-space --> linear-map
+  linear-map --> eigen
+  eigen --> quadratic-form
+  vector-space --> inner-product
+  eigen --> svd
+  inner-product --> svd
+  power-root --> number-theory-basic
+  algebra-basic --> number-theory-basic
+  number-theory-basic --> modular-crypto
+  modular-crypto --> group-theory
+  set-map --> group-theory
+  group-theory --> ring-field
+  ring-field --> galois
+  complex-analysis --> analytic-number-theory
+  number-theory-basic --> analytic-number-theory
+  improper-integral --> real-analysis
+  series-basic --> real-analysis
+  real-analysis --> lp-space
+  taylor --> complex-analysis
+  power-series --> complex-analysis
+  complex-analysis --> residue
+  complex-analysis --> conformal-mapping
+  lp-space --> banach-space
+  lp-space --> hilbert-space
+  inner-product --> hilbert-space
+  banach-space --> functional-analysis
+  hilbert-space --> functional-analysis
+  functional-analysis --> spectrum
+  definite-integral --> multivariable-calc
+  analytic-geo --> multivariable-calc
+  multivariable-calc --> gradient-vector
+  multivariable-calc --> multiple-integral
+  multiple-integral --> stokes
+  definite-integral --> ode-basic
+  ode-basic --> ode-system
+  ode-system --> pde-basic
+  fourier-series --> pde-basic
+  pde-basic --> pde-solve
+  fourier-transform --> pde-solve
+  multivariable-calc --> differential-geometry
+  analytic-geo --> differential-geometry
+  real-analysis --> topology-basic
+  set-map --> topology-basic
+  topology-basic --> algebraic-topology
+  group-theory --> algebraic-topology
+  differential-geometry --> riemann-geometry
+  linear-algebra --> riemann-geometry
+  prob-basic --> prob-axiom
+  set-map --> prob-axiom
+  prob-axiom --> random-var
+  random-var --> common-dist
+  random-var --> expectation
+  definite-integral --> expectation
+  expectation --> law-large-num
+  law-large-num --> clt
+  expectation --> joint-dist
+  multiple-integral --> joint-dist
+  random-var --> markov-chain
+  linear-algebra --> markov-chain
+  markov-chain --> mcmc
+  monte-carlo --> mcmc
+  clt --> brownian-motion
+  markov-chain --> brownian-motion
+  brownian-motion --> stochastic-calc
+  expectation --> martingale
+  brownian-motion --> martingale
+  joint-dist --> bayesian-stat
+  mcmc --> bayesian-stat
+  expectation --> statistics-infer
+  clt --> statistics-infer
+  stat-basic --> data-viz
+  linear-func --> data-viz
+  set-map --> logic-proposition
+  logic-proposition --> proof-methods
+  induction --> proof-methods
+  proof-methods --> graphtheory-basic
+  vector-basic --> graphtheory-basic
+  graphtheory-basic --> graphalgo
+  induction --> graphalgo
+  permute-combine --> combin-counting
+  generating-func --> combin-counting
+  sequence --> generating-func
+  power-series --> generating-func
+  logic-proposition --> automata
+  automata --> computability
+  computability --> complexity
+  graphalgo --> complexity
+  func-extreme --> optimization-basic
+  quadratic-form --> optimization-basic
+  optimization-basic --> convex-basic
+  quadratic-form --> convex-basic
+  optimization-basic --> linear-program
+  linear-algebra --> linear-program
+  linear-program --> duality
+  functional-analysis --> duality
+  duality --> kkt
+  convex-basic --> kkt
+  convex-basic --> convex-opt
+  gradient-descent --> convex-opt
+  gradient-vector --> gradient-descent
+  optimization-basic --> gradient-descent
+  gradient-descent --> sgd
+  expectation --> sgd
+  trig-identity --> fourier-series
+  power-series --> fourier-series
+  fourier-series --> fourier-transform
+  improper-integral --> fourier-transform
+  fourier-transform --> fft
+  complexity --> fft
+  exponent-log --> info-theory
+  prob-axiom --> info-theory
+  taylor --> numerical-methods
+  linear-algebra --> numerical-methods
+  law-large-num --> monte-carlo
+  random-var --> monte-carlo
+  ode-system --> dynamical-systems
+  numerical-methods --> dynamical-systems
+  ode-system --> control-theory
+  linear-algebra --> control-theory
+  functional-analysis --> variational-calc
+  pde-basic --> variational-calc
+  sgd --> ml-basics
+  statistics-infer --> ml-basics
+  linear-algebra --> ml-basics
+  ml-basics --> loss-func
+  info-theory --> loss-func
+  ml-basics --> backprop
+  gradient-vector --> backprop
+  backprop --> deep-learning
+  svd --> deep-learning
+  joint-dist --> prob-graph
+  bayesian-stat --> prob-graph
+  hilbert-space --> kernel-methods
+  duality --> kernel-methods
+  svd --> pca-embedding
+  clt --> pca-embedding
+  deep-learning --> representation-learning
+  pca-embedding --> representation-learning
+  deep-learning --> transformer
+  fourier-transform --> transformer
+  transformer --> llm-arch
+  llm-arch --> llm-training
+  sgd --> llm-training
+  llm-training --> alignment
+  control-theory --> alignment
+  rl-basics --> alignment
+  pde-basic --> diffusion
+  monte-carlo --> diffusion
+  deep-learning --> diffusion
+  llm-arch --> llm-inference
+  fft --> llm-inference
+  modular-crypto --> crypto-app
+  number-theory-basic --> crypto-app
+  riemann-geometry --> geometric-deep-learning
+  deep-learning --> geometric-deep-learning
+  representation-learning --> self-supervised
+  transformer --> self-supervised
+  control-theory --> rl-basics
+  ml-basics --> rl-basics
+  markov-chain --> rl-basics
+  sequence --> time-value
+  exponent-log --> time-value
+  expectation --> portfolio-theory
+  time-value --> portfolio-theory
+  portfolio-theory --> capm
+  linear-algebra --> capm
+  stochastic-calc --> black-scholes
+  pde-solve --> black-scholes
+  portfolio-theory --> risk-metrics
+  clt --> risk-metrics
+  statistics-infer --> time-series
+  clt --> time-series
+  time-series --> garch
+  expectation --> garch
+  capm --> factor-investing
+  time-series --> factor-investing
+  stochastic-calc --> market-micro
+  ml-basics --> market-micro
+  time-series --> stat-arb
+  factor-investing --> stat-arb
+  ml-basics --> ml-quant
+  factor-investing --> ml-quant
+  deep-learning --> ml-quant
+  rl-basics --> rl-trading
+  market-micro --> rl-trading
+  monte-carlo --> mc-pricing
+  black-scholes --> mc-pricing

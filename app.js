@@ -293,7 +293,26 @@ function loop(now){
   controls.update();
   tickAnim(now);
   tickCam(now);
+  tickLabels();
   renderer3D.render(scene,camera);
+}
+
+/* 标签距离 LOD：近处清晰、远处淡出，避免 154 个标签在全图视角糊成一团 */
+function tickLabels(){
+  if(!camera||!meshList.length) return;
+  const cam=camera.position;
+  for(let i=0;i<meshList.length;i++){
+    const m=meshList[i], sp=m.userData.sprite;
+    if(!sp||!sp.visible) continue;
+    const base=sp.userData.op!==undefined?sp.userData.op:1;
+    if(sp.userData.pinned){ sp.material.opacity=base; continue; }
+    const d=cam.distanceTo(m.position);
+    let k;
+    if(d<45) k=1;
+    else if(d<150) k=1-(d-45)/105*0.8;
+    else k=0.2;
+    sp.material.opacity=base*k;
+  }
 }
 
 function clear3D(){
@@ -346,6 +365,7 @@ function makeLabelSprite(n, dim){
   const sp=new THREE.Sprite(mat);
   sp.scale.set(SPRITE_H*W/H, SPRITE_H, 1);
   sp.userData.baseX=sp.scale.x;
+  sp.userData.op=dim?0.16:1;
   return sp;
 }
 function nearestScreenNode(px,py){
@@ -379,6 +399,7 @@ function rebuild3D(ids, highlight, focusOnly){
     m.userData.id=id;
     scene.add(m); meshes.set(id,m); meshList.push(m);
     const sp=makeLabelSprite(n, dim);
+    if(hl) sp.userData.pinned=true;
     if(focusOnly && !hl) sp.visible=false;
     sp.position.set(0.95,0.28,0);
     m.add(sp);

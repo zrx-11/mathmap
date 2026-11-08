@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>数学学习全景图 · 路线版</title>
+<meta name="description" content="数学知识依赖路线图（Mermaid 流程图）：154 个节点、256 条前置→后续依赖、15 个大类、L0–L6 七个阶段，仅含节点与路线。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%230B1220%22/%3E%3Cpath d=%22M32 10 L52 46 L12 46 Z%22 fill=%22none%22 stroke=%22%2338BDF8%22 stroke-width=%224%22 stroke-linejoin=%22round%22/%3E%3Ccircle cx=%2232%22 cy=%2210%22 r=%224%22 fill=%22%23F472B6%22/%3E%3Ccircle cx=%2252%22 cy=%2246%22 r=%224%22 fill=%22%23FBBF24%22/%3E%3Ccircle cx=%2212%22 cy=%2246%22 r=%224%22 fill=%22%2334D399%22/%3E%3C/svg%3E">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:#0B1220;color:#D8E1F0;
+    font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+    font-size:14px;line-height:1.6;
+  }
+  .wrap{max-width:1200px;margin:0 auto;padding:16px}
+  header h1{font-size:20px;margin:0 0 2px;letter-spacing:.5px;color:#EAF2FF}
+  header p{margin:0 0 14px;color:#8CA3C7;font-size:13px}
+  .meta{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0 0 14px;font-size:13px;color:#A9BCD9}
+  .meta b{color:#5EEAD4;font-weight:600}
+  .stage{
+    background:rgba(148,163,184,.05);
+    border:1px solid rgba(148,163,184,.14);
+    border-radius:12px;
+    overflow:auto;
+    padding:14px;
+    -webkit-overflow-scrolling:touch;
+    touch-action:pan-x pan-y;
+  }
+  .stage .mermaid{
+    width:max-content;
+    min-width:0;
+    text-align:left;
+  }
+  .stage svg{max-width:none !important}
+  .src-note{
+    margin-top:12px;color:#7C93B8;font-size:12.5px;
+  }
+  .src-note a{color:#38BDF8;text-decoration:none}
+  footer{margin-top:16px;color:#64748B;font-size:12px;border-top:1px solid rgba(148,163,184,.12);padding-top:10px}
+  .kicker{font-size:12px;letter-spacing:.14em;color:#7C93B8;display:flex;align-items:center;gap:8px;margin-bottom:6px}
+  .kicker::before{content:"";width:18px;height:1px;background:#38BDF8}
+  .navlinks{margin-left:auto;display:flex;gap:8px}
+  .navlink{font-size:12px;color:#A9BCD9;text-decoration:none;border:1px solid rgba(148,163,184,.25);border-radius:999px;padding:4px 11px;white-space:nowrap;transition:all .18s}
+  .navlink:hover{color:#EAF2FF;border-color:rgba(56,189,248,.55);background:rgba(56,189,248,.08)}
+  .zoombar{display:flex;align-items:center;gap:8px;margin:0 0 10px;flex-wrap:wrap}
+  .zbtn{
+    font:inherit;font-size:12.5px;color:#A9BCD9;background:rgba(148,163,184,.06);
+    border:1px solid rgba(148,163,184,.22);border-radius:999px;padding:5px 12px;cursor:pointer;
+    transition:all .18s;
+  }
+  .zbtn:hover{color:#EAF2FF;border-color:rgba(56,189,248,.5)}
+  .zbtn.active{color:#0B1220;background:#5EEAD4;border-color:#5EEAD4;font-weight:600}
+  .zhint{font-size:12px;color:#7C93B8}
+  #err{display:none;position:sticky;top:0;background:#2B1016;color:#FFE4E6;border:1px solid rgba(248,113,113,.5);border-radius:10px;padding:14px 16px;margin:0 0 12px;font-size:14px;line-height:1.7;white-space:pre-wrap;z-index:50}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="kicker">MERMAID ROUTE MAP<nav class="navlinks"><a class="navlink" href="index.html">← 3D 全景图</a></nav></div>
+    <h1>数学学习全景图 · 路线版</h1>
+    <p>仅节点与学习路线：每一条连线表示「前置 → 后续」。本页不含节点说明文字，可配合全景图详情使用。</p>
+  </header>
+  <div class="meta">
+    <span>节点 <b>154</b></span>
+    <span>依赖边 <b>256</b></span>
+    <span>大类 <b>15</b></span>
+    <span>阶段 <b>L0–L6</b></span>
+    <span>路径 <b>AI 大模型 · 金融量化</b></span>
+  </div>
+  <div class="zoombar" id="zoombar">
+    <button data-z="fit" class="zbtn active">适配宽度</button>
+    <button data-z="half" class="zbtn">50%</button>
+    <button data-z="full" class="zbtn">原始尺寸</button>
+    <span class="zhint">放大后可在框内横向滚动查看</span>
+  </div>
+  <div id="err">Mermaid 渲染失败，请刷新页面重试；也可直接使用 math-roadmap.mmd 源码。</div>
+  <div class="stage">
+<pre class="mermaid">
+
+flowchart TD
+  %% 数学学习全景图 · 无说明路线版（154 节点 / 256 边 / 15 大类 / L0-L6）
+  classDef cat0 fill:#230C0C,stroke:#FF5B5B,stroke-width:1.2px,color:#FF5B5B
+  classDef cat1 fill:#231608,stroke:#FF9E3D,stroke-width:1.2px,color:#FF9E3D
+  classDef cat2 fill:#221C0A,stroke:#F7C948,stroke-width:1.2px,color:#F7C948
+  classDef cat3 fill:#171D08,stroke:#A8D640,stroke-width:1.2px,color:#A8D640
+  classDef cat4 fill:#071D15,stroke:#34D399,stroke-width:1.2px,color:#34D399
+  classDef cat5 fill:#061D1A,stroke:#2DD4BF,stroke-width:1.2px,color:#2DD4BF
+  classDef cat6 fill:#071A22,stroke:#38BDF8,stroke-width:1.2px,color:#38BDF8
+  classDef cat7 fill:#0D1723,stroke:#60A5FA,stroke-width:1.2px,color:#60A5FA
+  classDef cat8 fill:#121322,stroke:#818CF8,stroke-width:1.2px,color:#818CF8
+  classDef cat9 fill:#1A1223,stroke:#C084FC,stroke-width:1.2px,color:#C084FC
+  classDef cat10 fill:#201022,stroke:#E879F9,stroke-width:1.2px,color:#E879F9
+  classDef cat11 fill:#230F12,stroke:#FB7185,stroke-width:1.2px,color:#FB7185
+  classDef cat12 fill:#041D21,stroke:#22D3EE,stroke-width:1.2px,color:#22D3EE
+  classDef cat13 fill:#220F19,stroke:#F472B6,stroke-width:1.2px,color:#F472B6
+  classDef cat14 fill:#231A05,stroke:#FBBF24,stroke-width:1.2px,color:#FBBF24
+  subgraph L0[&quot;L0 数与运算 · 6 节点&quot;]
+    num-natural[&quot;自然数与四则运算&quot;]
+    fraction-decimal[&quot;分数与小数&quot;]
+    ratio-percent[&quot;百分数与比例&quot;]
+    neg-number[&quot;负数与数轴&quot;]
+    power-root[&quot;幂与根式&quot;]
+    geometry-intro[&quot;几何图形认知&quot;]
+  end
+  class num-natural cat0;
+  class fraction-decimal cat0;
+  class ratio-percent cat0;
+  class neg-number cat0;
+  class power-root cat0;
+  class geometry-intro cat0;
+  subgraph L1[&quot;L1 初等数学 · 12 节点&quot;]
+    algebra-basic[&quot;代数式与整式&quot;]
+    linear-eq[&quot;一元一次方程&quot;]
+    linear-system[&quot;二元一次方程组&quot;]
+    quadratic-eq[&quot;一元二次方程&quot;]
+    inequality[&quot;不等式与不等式组&quot;]
+    factorization[&quot;因式分解&quot;]
+    rational-expression[&quot;分式与有理式&quot;]
+    plane-geometry[&quot;平面几何基础&quot;]
+    congruent-similar[&quot;全等与相似&quot;]
+    circle-geo[&quot;圆与圆幂定理&quot;]
+    number-line-coord[&quot;平面直角坐标系&quot;]
+    linear-func[&quot;一次函数与图像&quot;]
+  end
+  class algebra-basic cat1;
+  class linear-eq cat1;
+  class linear-system cat1;
+  class quadratic-eq cat1;
+  class inequality cat1;
+  class factorization cat1;
+  class rational-expression cat1;
+  class plane-geometry cat2;
+  class congruent-similar cat2;
+  class circle-geo cat2;
+  class number-line-coord cat2;
+  class linear-func cat2;
+  subgraph L2[&quot;L2 高中阶段 · 16 节点&quot;]
+    trig-basic[&quot;三角函数初步&quot;]
+    trig-identity[&quot;三角恒等变换&quot;]
+    solve-triangle[&quot;解三角形&quot;]
+    vector-basic[&quot;平面向量&quot;]
+    analytic-geo[&quot;解析几何&quot;]
+    quadratic-func[&quot;二次函数&quot;]
+    set-map[&quot;集合与映射&quot;]
+    func-concept[&quot;函数概念与性质&quot;]
+    exponent-log[&quot;指数与对数函数&quot;]
+    func-analysis[&quot;函数综合与图像变换&quot;]
+    sequence[&quot;数列与等差等比&quot;]
+    induction[&quot;数学归纳法&quot;]
+    permute-combine[&quot;排列组合与二项式&quot;]
+    prob-basic[&quot;概率初步&quot;]
+    stat-basic[&quot;统计初步&quot;]
+    logic-proposition[&quot;命题与谓词逻辑&quot;]
+  end
+  class trig-basic cat2;
+  class trig-identity cat2;
+  class solve-triangle cat2;
+  class vector-basic cat2;
+  class analytic-geo cat2;
+  class quadratic-func cat3;
+  class set-map cat3;
+  class func-concept cat3;
+  class exponent-log cat3;
+  class func-analysis cat3;
+  class sequence cat3;
+  class induction cat3;
+  class permute-combine cat3;
+  class prob-basic cat9;
+  class stat-basic cat9;
+  class logic-proposition cat10;
+  subgraph L3[&quot;L3 大学基础 · 28 节点&quot;]
+    limit-basic[&quot;极限初步&quot;]
+    limit-epsilon[&quot;ε-δ语言与极限理论&quot;]
+    continuity[&quot;连续函数与介值定理&quot;]
+    derivative-basic[&quot;导数与微分&quot;]
+    mean-value[&quot;微分中值定理&quot;]
+    lhopital[&quot;洛必达法则&quot;]
+    taylor[&quot;泰勒公式&quot;]
+    func-extreme[&quot;函数极值与最值&quot;]
+    integral-basic[&quot;不定积分&quot;]
+    definite-integral[&quot;定积分与微积分基本定理&quot;]
+    improper-integral[&quot;反常积分&quot;]
+    series-basic[&quot;数项级数&quot;]
+    power-series[&quot;幂级数&quot;]
+    linear-algebra[&quot;线性方程组与矩阵&quot;]
+    determinant[&quot;行列式&quot;]
+    matrix-rank[&quot;矩阵的秩与线性相关&quot;]
+    vector-space[&quot;向量空间&quot;]
+    linear-map[&quot;线性变换&quot;]
+    eigen[&quot;特征值与特征向量&quot;]
+    multivariable-calc[&quot;多元微积分&quot;]
+    gradient-vector[&quot;梯度与场论&quot;]
+    prob-axiom[&quot;概率公理化&quot;]
+    random-var[&quot;随机变量与分布&quot;]
+    common-dist[&quot;常见分布族&quot;]
+    expectation[&quot;期望与方差&quot;]
+    data-viz[&quot;数据可视化与探索&quot;]
+    proof-methods[&quot;证明方法&quot;]
+    graphtheory-basic[&quot;图论基础&quot;]
+  end
+  class limit-basic cat4;
+  class limit-epsilon cat4;
+  class continuity cat4;
+  class derivative-basic cat4;
+  class mean-value cat4;
+  class lhopital cat4;
+  class taylor cat4;
+  class func-extreme cat4;
+  class integral-basic cat4;
+  class definite-integral cat4;
+  class improper-integral cat4;
+  class series-basic cat4;
+  class power-series cat4;
+  class linear-algebra cat5;
+  class determinant cat5;
+  class matrix-rank cat5;
+  class vector-space cat5;
+  class linear-map cat5;
+  class eigen cat5;
+  class multivariable-calc cat8;
+  class gradient-vector cat8;
+  class prob-axiom cat9;
+  class random-var cat9;
+  class common-dist cat9;
+  class expectation cat9;
+  class data-viz cat9;
+  class proof-methods cat10;
+  class graphtheory-basic cat10;
+  subgraph L4[&quot;L4 大学中级 · 26 节点&quot;]
+    quadratic-form[&quot;二次型与正定&quot;]
+    inner-product[&quot;内积空间与正交&quot;]
+    svd[&quot;奇异值分解&quot;]
+    number-theory-basic[&quot;初等数论&quot;]
+    modular-crypto[&quot;同余与RSA&quot;]
+    real-analysis[&quot;实分析与测度论&quot;]
+    complex-analysis[&quot;复变函数&quot;]
+    residue[&quot;留数定理&quot;]
+    multiple-integral[&quot;重积分与曲线曲面积分&quot;]
+    stokes[&quot;格林高斯斯托克斯定理&quot;]
+    ode-basic[&quot;常微分方程&quot;]
+    topology-basic[&quot;点集拓扑&quot;]
+    law-large-num[&quot;大数定律&quot;]
+    clt[&quot;中心极限定理&quot;]
+    joint-dist[&quot;随机向量与条件分布&quot;]
+    markov-chain[&quot;马尔可夫链&quot;]
+    statistics-infer[&quot;统计推断&quot;]
+    graphalgo[&quot;图算法&quot;]
+    combin-counting[&quot;组合计数&quot;]
+    generating-func[&quot;生成函数&quot;]
+    automata[&quot;自动机与形式语言&quot;]
+    optimization-basic[&quot;优化问题建模&quot;]
+    convex-basic[&quot;凸集与凸函数&quot;]
+    linear-program[&quot;线性规划&quot;]
+    fourier-series[&quot;傅里叶级数&quot;]
+    time-value[&quot;货币时间价值&quot;]
+  end
+  class quadratic-form cat5;
+  class inner-product cat5;
+  class svd cat5;
+  class number-theory-basic cat6;
+  class modular-crypto cat6;
+  class real-analysis cat7;
+  class complex-analysis cat7;
+  class residue cat7;
+  class multiple-integral cat8;
+  class stokes cat8;
+  class ode-basic cat8;
+  class topology-basic cat8;
+  class law-large-num cat9;
+  class clt cat9;
+  class joint-dist cat9;
+  class markov-chain cat9;
+  class statistics-infer cat9;
+  class graphalgo cat10;
+  class combin-counting cat10;
+  class generating-func cat10;
+  class automata cat10;
+  class optimization-basic cat11;
+  class convex-basic cat11;
+  class linear-program cat11;
+  class fourier-series cat12;
+  class time-value cat14;
+  subgraph L5[&quot;L5 大学高级 · 41 节点&quot;]
+    group-theory[&quot;群论&quot;]
+    ring-field[&quot;环与域&quot;]
+    galois[&quot;伽罗瓦理论初步&quot;]
+    lp-space[&quot;Lp空间与收敛&quot;]
+    conformal-mapping[&quot;共形映射&quot;]
+    banach-space[&quot;巴拿赫空间与算子&quot;]
+    hilbert-space[&quot;希尔伯特空间&quot;]
+    functional-analysis[&quot;泛函分析&quot;]
+    spectrum[&quot;谱理论初步&quot;]
+    ode-system[&quot;微分方程组与稳定性&quot;]
+    pde-basic[&quot;偏微分方程&quot;]
+    pde-solve[&quot;偏微分方程解法&quot;]
+    differential-geometry[&quot;微分几何&quot;]
+    algebraic-topology[&quot;代数拓扑&quot;]
+    mcmc[&quot;马尔可夫链蒙特卡洛&quot;]
+    brownian-motion[&quot;布朗运动&quot;]
+    bayesian-stat[&quot;贝叶斯统计&quot;]
+    computability[&quot;可计算性&quot;]
+    complexity[&quot;计算复杂度&quot;]
+    duality[&quot;对偶理论&quot;]
+    kkt[&quot;KKT条件&quot;]
+    convex-opt[&quot;凸优化算法&quot;]
+    gradient-descent[&quot;梯度下降与变体&quot;]
+    sgd[&quot;随机梯度下降与在线学习&quot;]
+    fourier-transform[&quot;傅里叶变换&quot;]
+    fft[&quot;快速傅里叶变换&quot;]
+    info-theory[&quot;信息论&quot;]
+    numerical-methods[&quot;数值方法&quot;]
+    monte-carlo[&quot;蒙特卡洛方法&quot;]
+    dynamical-systems[&quot;动力系统&quot;]
+    ml-basics[&quot;机器学习基础&quot;]
+    loss-func[&quot;损失函数与正则化&quot;]
+    backprop[&quot;反向传播与自动微分&quot;]
+    deep-learning[&quot;深度学习基础&quot;]
+    prob-graph[&quot;概率图模型&quot;]
+    kernel-methods[&quot;核方法&quot;]
+    pca-embedding[&quot;降维与表示学习&quot;]
+    portfolio-theory[&quot;投资组合理论&quot;]
+    capm[&quot;CAPM与因子模型&quot;]
+    risk-metrics[&quot;风险度量&quot;]
+    time-series[&quot;时间序列分析&quot;]
+  end
+  class group-theory cat6;
+  class ring-field cat6;
+  class galois cat6;
+  class lp-space cat7;
+  class conformal-mapping cat7;
+  class banach-space cat7;
+  class hilbert-space cat7;
+  class functional-analysis cat7;
+  class spectrum cat7;
+  class ode-system cat8;
+  class pde-basic cat8;
+  class pde-solve cat8;
+  class differential-geometry cat8;
+  class algebraic-topology cat8;
+  class mcmc cat9;
+  class brownian-motion cat9;
+  class bayesian-stat cat9;
+  class computability cat10;
+  class complexity cat10;
+  class duality cat11;
+  class kkt cat11;
+  class convex-opt cat11;
+  class gradient-descent cat11;
+  class sgd cat11;
+  class fourier-transform cat12;
+  class fft cat12;
+  class info-theory cat12;
+  class numerical-methods cat12;
+  class monte-carlo cat12;
+  class dynamical-systems cat12;
+  class ml-basics cat13;
+  class loss-func cat13;
+  class backprop cat13;
+  class deep-learning cat13;
+  class prob-graph cat13;
+  class kernel-methods cat13;
+  class pca-embedding cat13;
+  class portfolio-theory cat14;
+  class capm cat14;
+  class risk-metrics cat14;
+  class time-series cat14;
+  subgraph L6[&quot;L6 前沿研究 · 25 节点&quot;]
+    analytic-number-theory[&quot;解析数论与ζ函数&quot;]
+    riemann-geometry[&quot;黎曼几何与张量&quot;]
+    stochastic-calc[&quot;随机积分与伊藤&quot;]
+    martingale[&quot;鞅论&quot;]
+    control-theory[&quot;控制论基础&quot;]
+    variational-calc[&quot;变分法&quot;]
+    representation-learning[&quot;表征学习&quot;]
+    transformer[&quot;Transformer与注意力&quot;]
+    llm-arch[&quot;大模型架构&quot;]
+    llm-training[&quot;大模型训练&quot;]
+    alignment[&quot;对齐与RLHF&quot;]
+    diffusion[&quot;扩散模型与生成式AI&quot;]
+    llm-inference[&quot;大模型推理优化&quot;]
+    crypto-app[&quot;密码学与数学安全&quot;]
+    geometric-deep-learning[&quot;几何深度学习&quot;]
+    self-supervised[&quot;自监督学习&quot;]
+    rl-basics[&quot;强化学习基础&quot;]
+    black-scholes[&quot;期权定价与Black-Scholes&quot;]
+    garch[&quot;波动率模型&quot;]
+    factor-investing[&quot;因子投资&quot;]
+    market-micro[&quot;市场微结构与高频&quot;]
+    stat-arb[&quot;统计套利&quot;]
+    ml-quant[&quot;机器学习量化&quot;]
+    rl-trading[&quot;强化学习交易&quot;]
+    mc-pricing[&quot;蒙特卡洛定价&quot;]
+  end
+  class analytic-number-theory cat6;
+  class riemann-geometry cat8;
+  class stochastic-calc cat9;
+  class martingale cat9;
+  class control-theory cat12;
+  class variational-calc cat12;
+  class representation-learning cat13;
+  class transformer cat13;
+  class llm-arch cat13;
+  class llm-training cat13;
+  class alignment cat13;
+  class diffusion cat13;
+  class llm-inference cat13;
+  class crypto-app cat13;
+  class geometric-deep-learning cat13;
+  class self-supervised cat13;
+  class rl-basics cat13;
+  class black-scholes cat14;
+  class garch cat14;
+  class factor-investing cat14;
+  class market-micro cat14;
+  class stat-arb cat14;
+  class ml-quant cat14;
+  class rl-trading cat14;
+  class mc-pricing cat14;
+  num-natural --&gt; fraction-decimal
+  fraction-decimal --&gt; ratio-percent
+  num-natural --&gt; neg-number
+  num-natural --&gt; power-root
+  num-natural --&gt; geometry-intro
+  num-natural --&gt; algebra-basic
+  fraction-decimal --&gt; algebra-basic
+  algebra-basic --&gt; linear-eq
+  linear-eq --&gt; linear-system
+  linear-eq --&gt; quadratic-eq
+  linear-eq --&gt; inequality
+  algebra-basic --&gt; factorization
+  quadratic-eq --&gt; factorization
+  factorization --&gt; rational-expression
+  fraction-decimal --&gt; rational-expression
+  geometry-intro --&gt; plane-geometry
+  plane-geometry --&gt; congruent-similar
+  congruent-similar --&gt; circle-geo
+  neg-number --&gt; number-line-coord
+  number-line-coord --&gt; linear-func
+  algebra-basic --&gt; linear-func
+  quadratic-eq --&gt; quadratic-func
+  linear-func --&gt; quadratic-func
+  congruent-similar --&gt; trig-basic
+  circle-geo --&gt; trig-basic
+  trig-basic --&gt; trig-identity
+  trig-identity --&gt; solve-triangle
+  number-line-coord --&gt; vector-basic
+  trig-basic --&gt; vector-basic
+  vector-basic --&gt; analytic-geo
+  linear-func --&gt; analytic-geo
+  circle-geo --&gt; analytic-geo
+  algebra-basic --&gt; set-map
+  set-map --&gt; func-concept
+  linear-func --&gt; func-concept
+  power-root --&gt; exponent-log
+  func-concept --&gt; exponent-log
+  quadratic-func --&gt; func-analysis
+  exponent-log --&gt; func-analysis
+  func-concept --&gt; sequence
+  sequence --&gt; induction
+  set-map --&gt; permute-combine
+  sequence --&gt; permute-combine
+  permute-combine --&gt; prob-basic
+  prob-basic --&gt; stat-basic
+  exponent-log --&gt; limit-basic
+  rational-expression --&gt; limit-basic
+  limit-basic --&gt; limit-epsilon
+  limit-epsilon --&gt; continuity
+  continuity --&gt; derivative-basic
+  quadratic-func --&gt; derivative-basic
+  derivative-basic --&gt; mean-value
+  mean-value --&gt; lhopital
+  mean-value --&gt; taylor
+  series-basic --&gt; taylor
+  derivative-basic --&gt; func-extreme
+  derivative-basic --&gt; integral-basic
+  integral-basic --&gt; definite-integral
+  definite-integral --&gt; improper-integral
+  sequence --&gt; series-basic
+  definite-integral --&gt; series-basic
+  series-basic --&gt; power-series
+  taylor --&gt; power-series
+  linear-system --&gt; linear-algebra
+  vector-basic --&gt; linear-algebra
+  linear-algebra --&gt; determinant
+  determinant --&gt; matrix-rank
+  linear-algebra --&gt; matrix-rank
+  matrix-rank --&gt; vector-space
+  vector-space --&gt; linear-map
+  linear-map --&gt; eigen
+  eigen --&gt; quadratic-form
+  vector-space --&gt; inner-product
+  eigen --&gt; svd
+  inner-product --&gt; svd
+  power-root --&gt; number-theory-basic
+  algebra-basic --&gt; number-theory-basic
+  number-theory-basic --&gt; modular-crypto
+  modular-crypto --&gt; group-theory
+  set-map --&gt; group-theory
+  group-theory --&gt; ring-field
+  ring-field --&gt; galois
+  complex-analysis --&gt; analytic-number-theory
+  number-theory-basic --&gt; analytic-number-theory
+  improper-integral --&gt; real-analysis
+  series-basic --&gt; real-analysis
+  real-analysis --&gt; lp-space
+  taylor --&gt; complex-analysis
+  power-series --&gt; complex-analysis
+  complex-analysis --&gt; residue
+  complex-analysis --&gt; conformal-mapping
+  lp-space --&gt; banach-space
+  lp-space --&gt; hilbert-space
+  inner-product --&gt; hilbert-space
+  banach-space --&gt; functional-analysis
+  hilbert-space --&gt; functional-analysis
+  functional-analysis --&gt; spectrum
+  definite-integral --&gt; multivariable-calc
+  analytic-geo --&gt; multivariable-calc
+  multivariable-calc --&gt; gradient-vector
+  multivariable-calc --&gt; multiple-integral
+  multiple-integral --&gt; stokes
+  definite-integral --&gt; ode-basic
+  ode-basic --&gt; ode-system
+  ode-system --&gt; pde-basic
+  fourier-series --&gt; pde-basic
+  pde-basic --&gt; pde-solve
+  fourier-transform --&gt; pde-solve
+  multivariable-calc --&gt; differential-geometry
+  analytic-geo --&gt; differential-geometry
+  real-analysis --&gt; topology-basic
+  set-map --&gt; topology-basic
+  topology-basic --&gt; algebraic-topology
+  group-theory --&gt; algebraic-topology
+  differential-geometry --&gt; riemann-geometry
+  linear-algebra --&gt; riemann-geometry
+  prob-basic --&gt; prob-axiom
+  set-map --&gt; prob-axiom
+  prob-axiom --&gt; random-var
+  random-var --&gt; common-dist
+  random-var --&gt; expectation
+  definite-integral --&gt; expectation
+  expectation --&gt; law-large-num
+  law-large-num --&gt; clt
+  expectation --&gt; joint-dist
+  multiple-integral --&gt; joint-dist
+  random-var --&gt; markov-chain
+  linear-algebra --&gt; markov-chain
+  markov-chain --&gt; mcmc
+  monte-carlo --&gt; mcmc
+  clt --&gt; brownian-motion
+  markov-chain --&gt; brownian-motion
+  brownian-motion --&gt; stochastic-calc
+  expectation --&gt; martingale
+  brownian-motion --&gt; martingale
+  joint-dist --&gt; bayesian-stat
+  mcmc --&gt; bayesian-stat
+  expectation --&gt; statistics-infer
+  clt --&gt; statistics-infer
+  stat-basic --&gt; data-viz
+  linear-func --&gt; data-viz
+  set-map --&gt; logic-proposition
+  logic-proposition --&gt; proof-methods
+  induction --&gt; proof-methods
+  proof-methods --&gt; graphtheory-basic
+  vector-basic --&gt; graphtheory-basic
+  graphtheory-basic --&gt; graphalgo
+  induction --&gt; graphalgo
+  permute-combine --&gt; combin-counting
+  generating-func --&gt; combin-counting
+  sequence --&gt; generating-func
+  power-series --&gt; generating-func
+  logic-proposition --&gt; automata
+  automata --&gt; computability
+  computability --&gt; complexity
+  graphalgo --&gt; complexity
+  func-extreme --&gt; optimization-basic
+  quadratic-form --&gt; optimization-basic
+  optimization-basic --&gt; convex-basic
+  quadratic-form --&gt; convex-basic
+  optimization-basic --&gt; linear-program
+  linear-algebra --&gt; linear-program
+  linear-program --&gt; duality
+  functional-analysis --&gt; duality
+  duality --&gt; kkt
+  convex-basic --&gt; kkt
+  convex-basic --&gt; convex-opt
+  gradient-descent --&gt; convex-opt
+  gradient-vector --&gt; gradient-descent
+  optimization-basic --&gt; gradient-descent
+  gradient-descent --&gt; sgd
+  expectation --&gt; sgd
+  trig-identity --&gt; fourier-series
+  power-series --&gt; fourier-series
+  fourier-series --&gt; fourier-transform
+  improper-integral --&gt; fourier-transform
+  fourier-transform --&gt; fft
+  complexity --&gt; fft
+  exponent-log --&gt; info-theory
+  prob-axiom --&gt; info-theory
+  taylor --&gt; numerical-methods
+  linear-algebra --&gt; numerical-methods
+  law-large-num --&gt; monte-carlo
+  random-var --&gt; monte-carlo
+  ode-system --&gt; dynamical-systems
+  numerical-methods --&gt; dynamical-systems
+  ode-system --&gt; control-theory
+  linear-algebra --&gt; control-theory
+  functional-analysis --&gt; variational-calc
+  pde-basic --&gt; variational-calc
+  sgd --&gt; ml-basics
+  statistics-infer --&gt; ml-basics
+  linear-algebra --&gt; ml-basics
+  ml-basics --&gt; loss-func
+  info-theory --&gt; loss-func
+  ml-basics --&gt; backprop
+  gradient-vector --&gt; backprop
+  backprop --&gt; deep-learning
+  svd --&gt; deep-learning
+  joint-dist --&gt; prob-graph
+  bayesian-stat --&gt; prob-graph
+  hilbert-space --&gt; kernel-methods
+  duality --&gt; kernel-methods
+  svd --&gt; pca-embedding
+  clt --&gt; pca-embedding
+  deep-learning --&gt; representation-learning
+  pca-embedding --&gt; representation-learning
+  deep-learning --&gt; transformer
+  fourier-transform --&gt; transformer
+  transformer --&gt; llm-arch
+  llm-arch --&gt; llm-training
+  sgd --&gt; llm-training
+  llm-training --&gt; alignment
+  control-theory --&gt; alignment
+  rl-basics --&gt; alignment
+  pde-basic --&gt; diffusion
+  monte-carlo --&gt; diffusion
+  deep-learning --&gt; diffusion
+  llm-arch --&gt; llm-inference
+  fft --&gt; llm-inference
+  modular-crypto --&gt; crypto-app
+  number-theory-basic --&gt; crypto-app
+  riemann-geometry --&gt; geometric-deep-learning
+  deep-learning --&gt; geometric-deep-learning
+  representation-learning --&gt; self-supervised
+  transformer --&gt; self-supervised
+  control-theory --&gt; rl-basics
+  ml-basics --&gt; rl-basics
+  markov-chain --&gt; rl-basics
+  sequence --&gt; time-value
+  exponent-log --&gt; time-value
+  expectation --&gt; portfolio-theory
+  time-value --&gt; portfolio-theory
+  portfolio-theory --&gt; capm
+  linear-algebra --&gt; capm
+  stochastic-calc --&gt; black-scholes
+  pde-solve --&gt; black-scholes
+  portfolio-theory --&gt; risk-metrics
+  clt --&gt; risk-metrics
+  statistics-infer --&gt; time-series
+  clt --&gt; time-series
+  time-series --&gt; garch
+  expectation --&gt; garch
+  capm --&gt; factor-investing
+  time-series --&gt; factor-investing
+  stochastic-calc --&gt; market-micro
+  ml-basics --&gt; market-micro
+  time-series --&gt; stat-arb
+  factor-investing --&gt; stat-arb
+  ml-basics --&gt; ml-quant
+  factor-investing --&gt; ml-quant
+  deep-learning --&gt; ml-quant
+  rl-basics --&gt; rl-trading
+  market-micro --&gt; rl-trading
+  monte-carlo --&gt; mc-pricing
+  black-scholes --&gt; mc-pricing
+
+</pre>
+  </div>
+  <p class="src-note">Mermaid 源码：<a href="math-roadmap.mmd" download>math-roadmap.mmd</a>（可粘贴到 Obsidian / GitHub README / Mermaid Live Editor）</p>
+  <footer>构建于 2026-10 · 数据与全景图一致（按知识深度分阶段，非按学期）</footer>
+</div>
+<script src="lib/mermaid.min.js"></script>
+<script>
+(function(){
+  var err=document.getElementById('err');
+  function initZoom(){
+    var bar=document.getElementById('zoombar');
+    var svg=document.querySelector('.stage svg');
+    if(!bar||!svg) return;
+    var vb=(svg.getAttribute('viewBox')||'').trim().split(/[\s,]+/);
+    var naturalW=parseFloat(vb[2])||7894;
+    function apply(mode){
+      var stage=document.querySelector('.stage');
+      var fitW=Math.max(320, stage.clientWidth-28);
+      var w = mode==='fit' ? Math.round(fitW)+'px' : (mode==='half'? Math.round(naturalW*0.5)+'px' : Math.round(naturalW)+'px');
+      svg.style.width=w; svg.style.height='auto'; svg.style.maxWidth='none';
+      bar.querySelectorAll('.zbtn').forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-z')===mode); });
+    }
+    bar.addEventListener('click', function(e){
+      var t=e.target.closest('.zbtn'); if(!t) return;
+      apply(t.getAttribute('data-z'));
+      document.querySelector('.stage').scrollLeft=0;
+    });
+    apply(window.innerWidth<700?'full':'fit');
+  }
+  try{
+    mermaid.initialize({
+      startOnLoad:false,
+      theme:'dark',
+      securityLevel:'strict',
+      flowchart:{curve:'basis', nodeSpacing:22, rankSpacing:34, padding:8, htmlLabels:false, useMaxWidth:false},
+      themeVariables:{
+        darkMode:true,
+        background:'transparent',
+        primaryColor:'rgba(56,189,248,.08)',
+        primaryTextColor:'#C7D6EE',
+        primaryBorderColor:'rgba(148,163,184,.3)',
+        lineColor:'rgba(120,150,190,.5)',
+        fontSize:'12px',
+        clusterBkg:'rgba(148,163,184,.035)',
+        clusterBorder:'rgba(148,163,184,.22)',
+        titleColor:'#C7D6EE',
+        edgeLabelBackground:'transparent'
+      }
+    });
+    (function(){
+      var src=document.querySelector('pre.mermaid').textContent;
+      mermaid.parse(src).then(function(){
+        return mermaid.run({querySelector:'.mermaid'});
+      }).then(function(){
+        initZoom();
+      }).catch(function(e){
+        var msg=(e&&e.message?e.message:'')+(e&&e.str?(' | str='+e.str):'');
+        err.style.display='block';
+        err.textContent='PARSER: '+msg;
+      });
+    })();
+  }catch(e){
+    err.style.display='block';
+    err.textContent='初始化失败：'+e.message;
+  }
+})();
+</script>
+</body>
+</html>

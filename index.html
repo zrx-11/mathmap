@@ -5,13 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>数学学习全景图</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%230B1220%22/%3E%3Cpath d=%22M32 10 L52 46 L12 46 Z%22 fill=%22none%22 stroke=%22%2338BDF8%22 stroke-width=%224%22 stroke-linejoin=%22round%22/%3E%3Ccircle cx=%2232%22 cy=%2210%22 r=%224%22 fill=%22%23F472B6%22/%3E%3Ccircle cx=%2252%22 cy=%2246%22 r=%224%22 fill=%22%23FBBF24%22/%3E%3Ccircle cx=%2212%22 cy=%2246%22 r=%224%22 fill=%22%2334D399%22/%3E%3C/svg%3E">
+  <meta name="description" content="数学学习全景地图：154 个知识节点、256 条前置依赖、15 个大类、L0–L6 七个知识阶段，覆盖从数感到世界前沿，重点标注 AI 大模型与金融量化两条路径。">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
-  <div class="kicker">INTERACTIVE KNOWLEDGE GRAPH</div>
+  <div class="kicker">INTERACTIVE KNOWLEDGE GRAPH
+    <nav class="navlinks">
+      <a class="navlink" href="route.html">路线版 · 流程图 →</a>
+    </nav>
+  </div>
   <h1>数学学习全景图</h1>
-  <div class="sub">从最初接触数学（数与运算）到世界前沿研究方向，按知识深度分七个阶段。节点按<strong style="color:var(--txt)">知识层级</strong>横向展开、按<strong style="color:var(--txt)">学科大类</strong>纵向分簇；每个节点标注入门前置、后续方向、学习标准与实际应用。两条重点路径：<span style="color:#F472B6">AI 大模型</span> 与 <span style="color:#FBBF24">金融量化</span>。</div>
+  <div class="sub">从最初接触数学（数与运算）到世界前沿研究方向，按知识深度分七个阶段。节点按<strong style="color:var(--txt)">知识层级</strong>横向展开、按<strong style="color:var(--txt)">学科大类</strong>纵向分簇；每个节点标注入门前置、后续方向、学习标准与实际应用。两条重点路径：<span style="color:#F472B6">AI 大模型</span> 与 <span style="color:#FBBF24">金融量化</span>。另提供<a href="route.html" style="color:var(--accent);text-decoration:none">仅节点与路线的流程图版本</a>。</div>
   <div class="stats" id="stats"></div>
 </header>
 
@@ -39,8 +44,8 @@
   <div class="lv-bar" id="lvBar"></div>
   <div style="margin-top:8px"><b>读图方式</b>：点任意节点查看五要素详情；点详情中的前置/后置可跳转高亮依赖链；右上角可拖动、滚轮缩放；按大类/阶段/路径筛选后自动重排。<b>数据说明</b>：节点间连线表示「前置 → 后续」学习依赖；本图为结构地图，节点内容的掌握标准为建议基准，可按个人目标调整。构建于 2026-10。</div>
 </footer>
-  <script src="https://fastly.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
-  <script src="https://fastly.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="lib/three.min.js"></script>
+  <script src="lib/OrbitControls.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

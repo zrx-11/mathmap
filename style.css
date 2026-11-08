@@ -178,3 +178,15 @@
   @media (prefers-reduced-motion:reduce){
     *,*::before,*::after{animation:none !important;transition:none !important}
   }
+
+/* ===== 跨视图导航 ===== */
+.navlinks{margin-left:auto;display:flex;gap:8px}
+.navlink{
+  font-size:12px;letter-spacing:.02em;color:var(--txt2);text-decoration:none;
+  border:1px solid var(--line);border-radius:999px;padding:4px 11px;
+  transition:color .18s,border-color .18s,background .18s;white-space:nowrap;
+}
+.navlink:hover{color:var(--txt);border-color:rgba(56,189,248,.55);background:rgba(56,189,248,.08)}
+@media (max-width:560px){
+  .navlink{font-size:11px;padding:3px 9px}
+}
